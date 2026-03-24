@@ -1,19 +1,19 @@
 GET /api/health
-{"status":"ok","app":"Volunteer Shift Manager","domain":"Developer Experience"}
+{"status":"ok"}
 
 GET /api/schema
-{"statuses":["captured", "implementing", "review", "released"],"fields":[{"key":"repository"},{"key":"impact_score"},{"key":"technical_notes"}]}
+{"domain":"Community","entity":"Community Program","statuses":["proposed", "open", "running", "archived"]}
 
-POST /api/records
+POST /api/items
 {
   "id": 1,
-  "title": "Demo Record",
-  "status": "implementing",
+  "title": "Phase3 Demo",
+  "status": "proposed",
   "payload": {
-    "repository": "Demo value",
-    "impact_score": 12,
-    "technical_notes": "seed note"
+    "host": "sample",
+    "participants": 5,
+    "community_notes": "notes"
   },
-  "created_at": "2026-03-24T15:52:22.530800+00:00",
-  "updated_at": "2026-03-24T15:52:22.530800+00:00"
+  "created_at": "2026-03-24T16:15:12.142091+00:00",
+  "updated_at": "2026-03-24T16:15:12.142091+00:00"
 }

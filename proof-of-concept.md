@@ -1,25 +1,20 @@
 # Proof of Concept - Volunteer Shift Manager
 
-## Scope
-- App category: Developer Experience
-- Entity model: Volunteer Shift Engineering Item
-- Deployable stack: Flask + SQLAlchemy + Gunicorn + Docker + CI
+## Deployment Readiness
+- Web app + API routes active
+- Container and PaaS deployment files included
+- Automated test suite and CI workflow included
 
-## Dynamic Field Configuration
-- Repository: `repository` (text)
-- Impact Score: `impact_score` (number)
-- Technical Notes: `technical_notes` (textarea)
-
-## Run Evidence Commands
+## Smoke Commands
 ```bash
-python app.py
+python run.py
 curl http://localhost:5000/api/health
 curl http://localhost:5000/api/schema
-curl -X POST http://localhost:5000/api/records   -H "Content-Type: application/json"   -d '{"title":"Demo Record","status":"implementing","payload":{"repository":"Demo value","impact_score":12,"technical_notes":"seed note"}}'
+curl -X POST http://localhost:5000/api/items   -H "Content-Type: application/json"   -d '{"title":"Phase3 Demo","status":"proposed","payload":{"host":"sample","participants":5,"community_notes":"notes"}}'
 curl http://localhost:5000/api/metrics
 ```
 
 ## Metadata
-- Idea number: 97
-- Generated UTC: 2026-03-24T15:52:22.530598+00:00
-- Status: Phase-2 complete
+- Generated UTC: 2026-03-24T16:15:12.141885+00:00
+- Phase: 3
+- Domain: Community

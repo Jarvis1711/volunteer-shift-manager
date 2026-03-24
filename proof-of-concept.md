@@ -1,24 +1,25 @@
 # Proof of Concept - Volunteer Shift Manager
 
-## Idea Reference
-- Number: 90
-- Title: Volunteer Shift Manager
-- Description: Allows non-profits to post shifts and track volunteer hours.
+## Scope
+- App category: Developer Experience
+- Entity model: Volunteer Shift Engineering Item
+- Deployable stack: Flask + SQLAlchemy + Gunicorn + Docker + CI
 
-## PoC Scope
-- App boots with Flask + SQLite persistence
-- CRUD flow works via web UI (`/`, `/items/new`, `/items/<id>/edit`)
-- API endpoints return valid JSON (`/api/health`, `/api/items`)
-- Deployability assets included (`Dockerfile`, `docker-compose.yml`, `Procfile`)
+## Dynamic Field Configuration
+- Repository: `repository` (text)
+- Impact Score: `impact_score` (number)
+- Technical Notes: `technical_notes` (textarea)
 
-## Run Evidence (to capture)
+## Run Evidence Commands
 ```bash
 python app.py
 curl http://localhost:5000/api/health
-curl -X POST http://localhost:5000/api/items -H "Content-Type: application/json" -d '{"title": "Demo item", "details": "Created from PoC command", "status": "active"}'
-curl http://localhost:5000/api/items
+curl http://localhost:5000/api/schema
+curl -X POST http://localhost:5000/api/records   -H "Content-Type: application/json"   -d '{"title":"Demo Record","status":"implementing","payload":{"repository":"Demo value","impact_score":12,"technical_notes":"seed note"}}'
+curl http://localhost:5000/api/metrics
 ```
 
 ## Metadata
-- Generated UTC: 2026-03-24T15:35:11.827382+00:00
-- Status: Deployable full-template scaffold complete
+- Idea number: 97
+- Generated UTC: 2026-03-24T15:52:22.530598+00:00
+- Status: Phase-2 complete
